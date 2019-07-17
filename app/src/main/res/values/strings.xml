@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Syncap</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Elif Varol</string>
+    <string name="nav_header_subtitle">elif@elifdemirhan.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Ayarlar</string>
+
+    <string name="menu_home">Takvim</string>
+    <string name="menu_gallery">Danışanlar</string>
+    <string name="menu_slideshow">Finans</string>
+    <string name="menu_tools">Hatırlatma</string>
+    <string name="menu_share">Ayarlar</string>
+    <string name="menu_send">Çıkış</string>
+
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_home">1</string>
+    <string name="title_dashboard">2</string>
+    <string name="title_notifications">3</string>
+
+    <string name="title_activity_bottom2">BottomActivity2</string>
+    <string name="title_home2">1</string>
+    <string name="title_dashboard2">2</string>
+    <string name="title_notifications2">3</string>
+    <string name="title_activity_notes">NotesActivity</string>
+
+
+    <string name="title_notes">Notlar</string>
+    <string name="title_reminders">Hatırlatıcılar</string>
+    <string name="title_passes">Şifreler</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
