@@ -17,37 +17,36 @@ import android.widget.TextView;
 public class NotesActivity extends AppCompatActivity {
     private TextView mTextMessage;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    //mTextMessage.setText(R.string.title_notes);
-                    changeFragment(1);
-                    return true;
-                case R.id.navigation_dashboard:
-                    //mTextMessage.setText(R.string.title_reminders);
-                    changeFragment(2);
-                    return true;
-                case R.id.navigation_notifications:
-                    //mTextMessage.setText(R.string.title_passes);
-                    changeFragment(3);
-                    return true;
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            Fragment selectedFragment = null;
+            switch (menuItem.getItemId()) {
+                case R.id.navigation_notes:
+                    selectedFragment = new NotesFragment();
+                    break;
+                case R.id.navigation_reminder:
+                    selectedFragment = new ReminderFragment();
+                    break;
+                case R.id.navigation_pass:
+                    selectedFragment = new PassFragment();
+                    break;
             }
-            return false;
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+            return true;
         }
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notes);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        BottomNavigationView navView = findViewById(R.id.nav_view_notes);
         //mTextMessage = findViewById(R.id.message);
         //
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setOnNavigationItemSelectedListener(navListener);
+        navView.setSelectedItemId(R.id.navigation_notes);
         //changeFragment(1);
     }
 
@@ -62,19 +61,19 @@ public class NotesActivity extends AppCompatActivity {
                fragment = new NotesFragment();
                fm = getSupportFragmentManager();
                ft = fm.beginTransaction();
-               ft.replace(R.id.pass_fragment, fragment);
+               ft.replace(R.id.fragment_container, fragment);
                ft.commit();
            case 2:
                fragment = new ReminderFragment();
                fm = getSupportFragmentManager();
                ft = fm.beginTransaction();
-               ft.replace(R.id.pass_fragment, fragment);
+               ft.replace(R.id.fragment_container, fragment);
                ft.commit();
            case 3:
                fragment = new PassFragment();
                fm = getSupportFragmentManager();
                ft = fm.beginTransaction();
-               ft.replace(R.id.pass_fragment, fragment);
+               ft.replace(R.id.fragment_container, fragment);
                ft.commit();
        }
 
