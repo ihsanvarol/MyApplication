@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="addNoteTitle">Başlık</string>
+    <string name="addNoteMemo">NotAlan</string>
+    <string name="addNoteCancel">İptal</string>
+    <string name="addNoteOK">Kaydet</string>
+</resources>

@@ -29,12 +29,16 @@ public class NotesFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                showDialogNote();
             }
         });
 
         return v;
+    }
+
+    private void showDialogNote() {
+        AddNoteFragment note = new AddNoteFragment();
+        note.show(getFragmentManager(), "Add Note");
     }
 
 
