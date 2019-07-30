@@ -1,21 +1,18 @@
 package com.eliva.myapplication;
 
-import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class NotesActivity extends AppCompatActivity implements AddNoteFragment.OnFragmentInteractionListener {
+public class NotesActivity extends AppCompatActivity {
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -80,8 +77,4 @@ public class NotesActivity extends AppCompatActivity implements AddNoteFragment.
 
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
 }

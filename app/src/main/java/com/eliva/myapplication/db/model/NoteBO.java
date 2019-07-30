@@ -2,47 +2,39 @@ package com.eliva.myapplication.db.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+
+import com.eliva.myapplication.utils.DateConverter;
 
 import java.util.Date;
 
 @Entity(tableName = "notes")
+@TypeConverters({DateConverter.class})
 public class NoteBO {
 
     @PrimaryKey(autoGenerate = true)
     private int logicalRef;
 
     @ColumnInfo(name = "title")
-    private String mTitle;
+    private String Title;
 
     @ColumnInfo(name = "noteLines")
-    private String mNoteLines;
+    private String NoteLines;
+
 
     @ColumnInfo(name = "created_at")
-    private Date mCreatedAt;
+    private Date CreatedAt;
 
-    public String getmTitle() {
-        return mTitle;
+
+    public NoteBO() {
     }
 
-    public void setmTitle(String mTitle) {
-        this.mTitle = mTitle;
-    }
-
-    public String getmNoteLines() {
-        return mNoteLines;
-    }
-
-    public void setmNoteLines(String mNoteLines) {
-        this.mNoteLines = mNoteLines;
-    }
-
-    public Date getmCreatedAt() {
-        return mCreatedAt;
-    }
-
-    public void setmCreatedAt(Date mCreatedAt) {
-        this.mCreatedAt = mCreatedAt;
+    @Ignore
+    public NoteBO(String title, String lines) {
+        this.Title = title;
+        this.NoteLines = lines;
     }
 
     public int getLogicalRef() {
@@ -53,11 +45,30 @@ public class NoteBO {
         this.logicalRef = logicalRef;
     }
 
-    public NoteBO(String mTitle, String mNoteLines, Date mCreatedAt) {
-        this.mTitle = mTitle;
-        this.mNoteLines = mNoteLines;
-        this.mCreatedAt = mCreatedAt;
+    public String getTitle() {
+        return Title;
     }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    public String getNoteLines() {
+        return NoteLines;
+    }
+
+    public void setNoteLines(String noteLines) {
+        NoteLines = noteLines;
+    }
+
+    public Date getCreatedAt() {
+        return CreatedAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        CreatedAt = createdAt;
+    }
+
 
 }
 

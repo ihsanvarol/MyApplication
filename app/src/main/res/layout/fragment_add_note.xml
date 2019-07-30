@@ -16,18 +16,18 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/addNoteTitle"
+                android:id="@+id/addNoteHeaderTitle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/addNoteTitle" />
 
-            <EditText
-                android:id="@+id/editText"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addNoteHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:text="" />
         </TableRow>
 
         <TableRow
@@ -35,13 +35,13 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/addNoteMemo"
+                android:id="@+id/addNoteMemoTitle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/addNoteMemo" />
 
-            <EditText
-                android:id="@+id/editText2"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/addNoteMemo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -67,8 +67,8 @@
                 android:layout_weight="1"
                 android:text="@string/addNoteCancel" />
 
-            <Button
-                android:id="@+id/button2"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/noteSaveButton"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
