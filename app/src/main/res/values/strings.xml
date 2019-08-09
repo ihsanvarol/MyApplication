@@ -36,4 +36,6 @@
     <string name="addNoteMemo">NotAlan</string>
     <string name="addNoteCancel">İptal</string>
     <string name="addNoteOK">Kaydet</string>
+    <string name="addReminderTitle">Adı</string>
+    <string name="addReminderDate">Tarih - Saat</string>
 </resources>

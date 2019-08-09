@@ -57,20 +57,22 @@ public class NotesFragment extends Fragment implements NotesRCAdapter.Callback {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mNotesAdapter = new NotesRCAdapter(new ArrayList<NoteBO>());
         mNotesAdapter.setCallback(this);
-        prepareDemoContent();
+        // prepareDemoContent();
         mRecyclerView.setAdapter(mNotesAdapter);
+        database.notesDao().getAllNotes().observe(this, notes -> mNotesAdapter.setData(notes));
 
     }
 
     private void showDialogNote() {
         AddNoteFragment note = new AddNoteFragment();
+        getActivity().getSupportFragmentManager().beginTransaction().addToBackStack("replaceFragA");
         note.show(getFragmentManager(), "Add Note");
     }
 
     @Override
     public void onDeleteClick(NoteBO mNoteBO) {
         database.notesDao().delete(mNoteBO);
-        mNotesAdapter.addItems(database.notesDao().getAll());
+        //mNotesAdapter.addItems(database.notesDao().getAll());
     }
 
     private void prepareDemoContent() {
@@ -87,7 +89,6 @@ public class NotesFragment extends Fragment implements NotesRCAdapter.Callback {
     @Override
     public void onResume() {
         super.onResume();
-        mNotesAdapter.addItems(database.notesDao().getAll());
     }
 
     @Override

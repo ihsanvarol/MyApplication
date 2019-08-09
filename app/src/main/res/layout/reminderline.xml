@@ -10,7 +10,7 @@
     tools:layout_editor_absoluteY="4dp">
 
     <ImageView
-        android:id="@+id/nlIcon"
+        android:id="@+id/remLineIcon"
         android:layout_width="34dp"
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
@@ -25,31 +25,47 @@
         tools:srcCompat="@drawable/alarm_white_36x36" />
 
 
-    <ImageView
-        android:id="@+id/nlDelete"
-        android:layout_width="43dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="8dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_delete_forever_black_24dp" />
-
     <TextView
-        android:id="@+id/nlTitle"
+        android:id="@+id/remLineTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        android:text="nlTitle"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/nlDelete"
+        app:layout_constraintEnd_toStartOf="@+id/remLineUpdate"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/nlIcon"
+        app:layout_constraintStart_toEndOf="@+id/remLineIcon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <ImageView
+        android:id="@+id/remLineUpdate"
+        android:layout_width="43dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_mode_edit_black_24dp" />
+
+    <ImageView
+        android:id="@+id/remLineDelete"
+        android:layout_width="43dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_delete_forever_black_24dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

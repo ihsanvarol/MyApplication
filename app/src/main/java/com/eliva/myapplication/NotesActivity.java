@@ -44,8 +44,8 @@ public class NotesActivity extends AppCompatActivity {
         //mTextMessage = findViewById(R.id.message);
         //
         navView.setOnNavigationItemSelectedListener(navListener);
-        navView.setSelectedItemId(R.id.navigation_notes);
-        //changeFragment(1);
+        // navView.setSelectedItemId(R.id.navigation_notes);
+        changeFragment(1);
     }
 
     public void changeFragment(int fid)
@@ -60,19 +60,23 @@ public class NotesActivity extends AppCompatActivity {
                fm = getSupportFragmentManager();
                ft = fm.beginTransaction();
                ft.replace(R.id.fragment_container, fragment);
+               //ft.addToBackStack("replaceFragA");
                ft.commit();
+               break;
            case 2:
                fragment = new ReminderFragment();
                fm = getSupportFragmentManager();
                ft = fm.beginTransaction();
                ft.replace(R.id.fragment_container, fragment);
                ft.commit();
+               break;
            case 3:
                fragment = new PassFragment();
                fm = getSupportFragmentManager();
                ft = fm.beginTransaction();
                ft.replace(R.id.fragment_container, fragment);
                ft.commit();
+               break;
        }
 
     }

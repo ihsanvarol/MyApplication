@@ -65,7 +65,8 @@ public class AddNoteFragment extends DialogFragment {
 //        }
         NoteBO mNote = new NoteBO(titleText.getText().toString(), linesText.getText().toString());
         database.notesDao().insertNote(mNote);
-        getActivity().onBackPressed();
+        //getFragmentManager().popBackStack("replaceFragA", 0);
+        getFragmentManager().beginTransaction().remove(this).commit();
     }
 
     @Override
